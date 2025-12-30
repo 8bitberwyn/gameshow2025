@@ -1,0 +1,50 @@
+/* General styling for the page */
+.kahoot-container {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  color: #333;
+  width: 60vw;
+  height: 80vh; /* Take full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+/* Optional: Add a smooth transition for the text */
+.kahoot-container h1, .kahoot-container p {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  margin-bottom: 20px;
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom spacing for heading and paragraphs */
+.kahoot-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.kahoot-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Optional: Style for bolded capitalized words */
+.kahoot-container p b {
+  font-weight: bold;
+  color: #3498db;
+}

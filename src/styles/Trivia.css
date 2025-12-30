@@ -1,0 +1,94 @@
+/* Trivia Container */
+.trivia-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Question Slide */
+.question-slide {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 55vw;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  height: 60vh;  /* Set a fixed height for each slide */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question-slide h2 {
+  font-size: 1.6rem; /* Slightly smaller font for the question */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  font-size: 1rem; /* Smaller font size for options */
+  margin: 8px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  justify-content: flex-start; /* Aligns the content to the left */
+}
+
+.option span {
+  width: 30px; /* Width for the letter (A, B, C, D) */
+  font-weight: bold; /* Make the letter bold */
+  text-align: center;
+}
+
+.option-text {
+  flex: 1; /* Ensures the option text takes up the remaining space */
+  text-align: left; /* Ensure the text is left-aligned */
+  padding-left: 10px; /* Adds space between the letter and the option text */
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Navigation Arrows */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.arrow-button {
+  font-size: 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-button:hover {
+  background-color: #2980b9;
+}

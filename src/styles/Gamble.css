@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Metal+Mania&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gamble-container {
+  height: 80vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0f0f0f, #1a0a0a, #0f0f0f);
+  color: #ff4444;
+  font-family: 'Metal Mania', cursive;
+  position: relative;
+}
+
+.gamble-background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gamble-main-content {
+  position: relative;
+  height: 90vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.gamble-header {
+  background: linear-gradient(to bottom right, rgba(139, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  border: 3px solid #ff0000;
+  border-radius: 8px;
+  padding: 10px 15px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  margin-bottom: 0px;
+}
+
+.gamble-header-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff3333;
+  margin-bottom: 0px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.5);
+  font-family: 'Nosifer', cursive;
+  letter-spacing: 0.05em;
+}
+
+.gamble-instructions {
+  font-size: 0.8rem;
+  color: #ffcccc;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gamble-instructions strong {
+  color: #ff6666;
+  font-weight: bold;
+}
+
+.gamble-cards-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 0;
+}
+
+.gamble-card {
+  background: linear-gradient(135deg, rgba(20, 0, 0, 0.9), rgba(50, 0, 0, 0.9));
+  border: 3px solid #cc0000;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.gamble-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 0, 0, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+.gamble-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(255, 0, 0, 0.5);
+  border-color: #ff3333;
+}
+
+.gamble-card:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+.gamble-card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+}
+
+.gamble-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff4444;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: 'Creepster', cursive;
+}
+
+.gamble-card-description {
+  font-size: 0.7rem;
+  color: #ffaaaa;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  min-height: 80px;
+}
+
+.gamble-card-outcomes {
+  border-top: 2px solid rgba(255, 0, 0, 0.3);
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.outcome-reward {
+  color: #66ff66;
+  font-weight: bold;
+  font-size: 0.7rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.outcome-penalty {
+  color: #ff6666;
+  font-weight: bold;
+  font-size: 0.7rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.gamble-footer {
+  text-align: center;
+  padding: 15px 0;
+  color: #ff6666;
+  font-style: italic;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .gamble-cards-container {
+    flex-wrap: wrap;
+  }
+  
+  .gamble-card {
+    width: 280px;
+  }
+}

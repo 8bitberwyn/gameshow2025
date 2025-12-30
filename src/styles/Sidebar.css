@@ -1,0 +1,51 @@
+/* Sidebar Container */
+.sidebar-container {
+  width: 10vw;
+  height: 100vh;
+  background-color: #2c3e50;  /* Dark background for sidebar */
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Title Styling */
+.sidebar-container h2 {
+  color: #ecf0f1;
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Link List Styling */
+.sidebar-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Link Styling */
+.sidebar-container a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #ecf0f1;  /* Light color for links */
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;  /* Smooth transition for hover */
+}
+
+/* Hover effect for links */
+.sidebar-container a:hover {
+  background-color: #16a085;  /* Light green hover color */
+  padding-left: 20px;  /* Slight indentation on hover */
+}
+
+/* Ensure no active link color change */
+.sidebar-container a:active {
+  background-color: transparent;  /* No color change on click */
+  padding-left: 10px;  /* No indentation on click */
+}

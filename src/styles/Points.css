@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.points-container {
+  height: 99vh;
+  width: 60vw;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #1c1917, #292524, #1c1917);
+  color: #fef3c7;
+  font-family: 'Cinzel', serif;
+  position: relative;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1920');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main-content {
+  position: relative;
+  height: 90vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.header {
+  background: linear-gradient(to bottom right, rgba(120, 53, 15, 0.6), rgba(28, 25, 23, 0.8));
+  border: 3px solid #d97706;
+  border-radius: 8px;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fbbf24;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: 'MedievalSharp', serif;
+}
+
+.header-subtitle {
+  font-size: 0.95rem;
+  color: #fde68a;
+  font-style: italic;
+}
+
+.tiers-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.tiers-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tiers-wrapper::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.tiers-wrapper::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 4px;
+}
+
+.tier-container {
+  border: 3px solid;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.tier-header {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.tier-header:hover {
+  opacity: 0.8;
+}
+
+.tier-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-family: 'MedievalSharp', serif;
+}
+
+.tier-arrow {
+  font-size: 1rem;
+}
+
+.tier-content {
+  padding: 0 16px 12px 16px;
+}
+
+.shop-item {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(180, 83, 9, 0.5);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.item-name {
+  color: #fef3c7;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.item-details {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.item-cost {
+  color: #facc15;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.item-limit {
+  color: #d97706;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  color: #b45309;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Tier-specific colors */
+.tier-legendary {
+  background: rgba(88, 28, 135, 0.4);
+  border-color: #a855f7;
+}
+
+.tier-legendary .tier-title,
+.tier-legendary .tier-arrow {
+  color: #d8b4fe;
+}
+
+.tier-epic {
+  background: rgba(30, 58, 138, 0.4);
+  border-color: #3b82f6;
+}
+
+.tier-epic .tier-title,
+.tier-epic .tier-arrow {
+  color: #93c5fd;
+}
+
+.tier-rare {
+  background: rgba(20, 83, 45, 0.4);
+  border-color: #22c55e;
+}
+
+.tier-rare .tier-title,
+.tier-rare .tier-arrow {
+  color: #86efac;
+}
+
+.tier-common {
+  background: rgba(55, 65, 81, 0.4);
+  border-color: #6b7280;
+}
+
+.tier-common .tier-title,
+.tier-common .tier-arrow {
+  color: #d1d5db;
+}
