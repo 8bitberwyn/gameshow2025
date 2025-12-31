@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 
-.jeopardy-container {
+.whothat-container {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
   color: #ffffff;
-  width: 70vw;
+  width: 60vw;
   height: 80vh;
   display: flex;
   flex-direction: column;

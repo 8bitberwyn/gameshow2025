@@ -28,7 +28,7 @@ const triviaData = [
     options: ["1987", "1989", "1991", "1993"],
   },
   {
-    question: "7. What is the longest river in the world?",
+    question: "7. What is the longest river in the world? Also, EVERYONE HOP ON TODAYS WORDLE!!",
     options: ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
   },
   {
@@ -36,8 +36,8 @@ const triviaData = [
     options: ["186", "206", "226", "246"],
   },
   {
-    question: "9. What is the capital city of Australia?",
-    options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    question: "9. What is the capital city of Austrulia?",
+    options: ["Sydney", "Melburne", "Canberra", "Brisbane"],
   },
   {
     question: "10. Which element has the chemical symbol 'Sb'?",

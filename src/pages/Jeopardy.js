@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import '../styles/Jeopardy.css'; // Import the Jeopardy CSS file for styling
+import '../styles/Jeopardy.css';
 
 function Jeopardy() {
   const [contentIndex, setContentIndex] = useState(0);
 
-  // Text content for the page
   const content = [
     { type: "heading", text: "Jeopardy Time!!" },
     { type: "text", text: "There are 5 categories" },
@@ -20,23 +19,21 @@ function Jeopardy() {
     },
   ];
 
-  // Handle click to reveal next content
   const handleClick = () => {
     if (contentIndex < content.length - 1) {
       setContentIndex(contentIndex + 1);
     }
   };
 
-  // Render content based on type (text, heading, or link)
   const renderContent = () => {
     const item = content[contentIndex];
     if (item.type === "text") {
-      return <p>{item.text}</p>;
+      return <p className="game-text">{item.text}</p>;
     } else if (item.type === "heading") {
-      return <h1>{item.text}</h1>;
+      return <h1 className="game-heading">{item.text}</h1>;
     } else if (item.type === "link") {
       return (
-        <a href={item.url} target="_blank" rel="noopener noreferrer" className="link">
+        <a href={item.url} target="_blank" rel="noopener noreferrer" className="game-link">
           {item.text}
         </a>
       );
@@ -45,7 +42,24 @@ function Jeopardy() {
 
   return (
     <div className="jeopardy-container" onClick={handleClick}>
-      {renderContent()}
+      <div className="spotlight spotlight-1"></div>
+      <div className="spotlight spotlight-2"></div>
+      <div className="spotlight spotlight-3"></div>
+      <div className="confetti-container">
+        {[...Array(50)].map((_, i) => (
+          <div key={i} className="confetti" style={{
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 3}s`,
+            animationDuration: `${3 + Math.random() * 2}s`,
+            backgroundColor: ['#ff6b6b', '#4ecdc4', '#ffe66d', '#a8e6cf', '#ff8b94'][Math.floor(Math.random() * 5)]
+          }}></div>
+        ))}
+      </div>
+      <div className="content-wrapper">
+        <div className="stage-lights"></div>
+        {renderContent()}
+
+      </div>
     </div>
   );
 }
