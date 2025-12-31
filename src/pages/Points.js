@@ -18,25 +18,27 @@ function Points() {
 
   const shopData = {
     tier1: [
-      { name: "Jump into Mortlake", cost: 10000, limit: "1x per player" }
+      { name: "Jump into Mortlake", cost: 12000, limit: "1x per player" },
+      { name: "Pick 2 players, they each send you $20 and $5 to Berwyn", cost: 10000, limit: "1x per player" }
     ],
     tier2: [
-      { name: "Pick 2 people, They take shirts off and hug for 20 seconds", cost: 4000, limit: "1x per player" },
-      { name: "Pick 2 people, They send you and Berwyn $5 each", cost: 3000, limit: "1x per player" },
-      { name: "Pick a person to apply black face paint on their faces", cost: 5000, limit: "1x per player" },
-      { name: "Gain a tier 2 punishment immunity", cost: 4000, limit: "∞ per player" }
+      { name: "Pick 2 players, They take shirts off and hug for 20 seconds", cost: 4000, limit: "1x per player" },
+      { name: "Pick 2 players, They send you and Berwyn $5 each", cost: 3000, limit: "1x per player" },
+      { name: "Pick a player to apply black face paint on their faces", cost: 5000, limit: "1x per player" },
+      { name: "Gain a tier 2 punishment immunity", cost: 4000, limit: "1 per player" }
     ],
     tier3: [
+      { name: "Pick 2 players to act out 2 discord edaters SUPER CRINGE!", cost: 2000, limit: "∞ per player" },
       { name: "Pick a player to drink some chicken feet juice", cost: 1000, limit: "∞ per player" },
       { name: "Pick a player to take a picture with Berwyn's Body Pillow", cost: 1000, limit: "∞ per player" },
-      { name: "Pick a player to slap their ass to a degree of your choosing", cost: 1500, limit: "∞ per player" },
-      { name: "Gain a tier 3 punishment immunity", cost: 1000, limit: "∞ per player" }
+      { name: "Pick a player to slap their ass to a degree of your choosing with a slipper", cost: 1500, limit: "∞ per player" },
+      { name: "Gain a tier 3 punishment immunity", cost: 1000, limit: "3 per player" }
     ],
     tier4: [
-      { name: "Pick a player for Berwyn to slap their ass, will be light", cost: "1-100", limit: "∞ per player" },
+      { name: "Pick a player for Berwyn to slap their ass, Mums it will be light", cost: "1-100", limit: "∞ per player" },
       { name: "Pick a player to do their best Speed impression", cost: 500, limit: "∞ per player" },
       { name: "Pick a player to sit on while they do a plank until they cant no more", cost: 500, limit: "∞ per player" },
-      { name: "Gain a tier 4 punishment immunity", cost: 500, limit: "∞ per player" }
+      { name: "Gain a tier 4 punishment immunity", cost: 500, limit: "5 per player" }
     ]
   };
 
