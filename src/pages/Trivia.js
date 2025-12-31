@@ -4,7 +4,7 @@ import '../styles/Trivia.css';  // Import the CSS file for styling
 // Trivia questions and options
 const triviaData = [
   {
-    question: "1. What is the animal for next year's according to the Chinese zodiac?",
+    question: "1. What is the animal for next year (2026) according to the Chinese zodiac?",
     options: ["Rabbit", "Dragon", "Snake", "Horse"],
   },
   {
@@ -72,7 +72,7 @@ const triviaData = [
     options: ["1969", "1950", "1999", "1984"],
   },
   {
-    question: "18. How many 'Diary of a Wimpy Kid' books are there currently?",
+    question: "18. How many 'Diary of a Wimpy Kid' books are there currently? also... PUSH UP CHALLENGE TIME!",
     options: ["10", "15", "20", "25"],
   },
   {

@@ -1,75 +1,231 @@
-/* Scoreboard container at the bottom */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@700;900&display=swap');
+
 html, body {
   height: 100%;
   margin: 0;
 }
+
 .scoreboard-container {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  /* height: 10%; */
-  background-color: #333;
+  background: linear-gradient(to top, #1a0033, #2d0a4e, #1a0033);
   color: white;
-  padding: 8px 0;
+  padding: 4px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 6;
+  box-shadow: 0 -5px 30px rgba(138, 43, 226, 0.6);
+  border-top: 3px solid #ff00ff;
 }
 
-/* Button to add new player */
+.scoreboard-glow-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000
+  );
+  background-size: 200% 100%;
+  animation: lightRun 2s linear infinite;
+}
+
+@keyframes lightRun {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+.scoreboard-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 0 10px;
+}
+
 .add-player-btn {
-  padding: 8px 16px;
-  background-color: #FF6F61;
-  border: none;
+  padding: 6px 10px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  border: 2px solid #ff4757;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  margin-bottom: 6px;
-  border-radius: 3px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Container for player list */
+.add-player-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  background: linear-gradient(135deg, #ff8787, #ff6b6b);
+}
+
+.add-player-btn:active {
+  transform: translateY(0);
+}
+
 .player-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;  /* Space between players */
+  gap: 8px;
+  flex: 1;
+  overflow-x: auto;
 }
 
-/* Styling for each player container */
-.player-container {
-  padding: 6px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+.player-card {
+  padding: 4px 8px;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(75, 0, 130, 0.3));
+  border: 2px solid #9d4edd;
+  border-radius: 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 160px;  /* Make it more horizontal */
-  height: 60px;  /* Reduce height */
-  margin-bottom: 24px;
+  width: 200px;
+  height: 48px;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  gap: 6px;
 }
 
-/* Input styling for name and score */
-.player-container input {
-  font-size: 16px;
-  margin-bottom: 5px;
-  text-align: center;
+.player-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
 }
 
-/* Styling for the delete button */
-.player-container button {
-  padding: 4px 8px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.player-card:hover::before {
+  left: 100%;
+}
+
+.player-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(157, 78, 221, 0.6);
+  border-color: #c77dff;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.player-name-input {
   font-size: 12px;
-  margin-top: 5px;
+  font-weight: bold;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.05em;
+  text-align: center;
   width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #fff;
+  padding: 2px 4px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.player-name-input:focus {
+  outline: none;
+  border-color: #c77dff;
+  box-shadow: 0 0 8px rgba(199, 125, 255, 0.5);
+}
+
+.score-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.player-score-input {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  width: 90px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffd60a;
+  border-radius: 6px;
+  color: #ffd60a;
+  padding: 2px 4px;
+  text-shadow: 0 0 10px rgba(255, 214, 10, 0.8);
+  box-shadow: 0 0 10px rgba(255, 214, 10, 0.3);
+}
+
+.player-score-input:focus {
+  outline: none;
+  border-color: #ffea00;
+  box-shadow: 0 0 15px rgba(255, 234, 0, 0.6);
+}
+
+/* Remove spinner arrows */
+.player-score-input::-webkit-inner-spin-button,
+.player-score-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.player-score-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.points-label {
+  font-size: 9px;
+  font-weight: bold;
+  font-family: 'Bebas Neue', cursive;
+  color: #ffd60a;
+  text-shadow: 0 0 5px rgba(255, 214, 10, 0.6);
+}
+
+.delete-btn {
+  padding: 4px;
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: white;
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ff6666, #ff0000);
+  transform: scale(1.05);
+  box-shadow: 0 3px 12px rgba(255, 0, 0, 0.5);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
 }
